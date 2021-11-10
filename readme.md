@@ -15,7 +15,15 @@ A ideia deste projeto surgiu a partir de aulas assistidas na plataforma [Alura](
 
 Esse projeto conta com Dockerfile tanto no frontend quanto no backend, para utilizar você precisar ter o [Docker](https://www.docker.com/get-started) instalado em sua máquina. 
 
+Startar a aplicação pelo Docker: 
+
+```docker-compose build ``` </br>
+```docker-compose up ```
 
 ### BUGFIX ###
-[ ] Ajustar a imagem do dockerfile no backend para conseguir consumir a aplicação de forma correta
+[X] Ajustar a imagem do dockerfile no backend para conseguir consumir a aplicação de forma correta
+- Solução: Estava mapeando a porta errada. 
+
+> A sintaxe pra fazer o bind de porta entre container e host é "porta-no-host:porta-no-container" então se você trocar "8080:80" para "8080:8080" a aplicação deve tá disponível em localhost:8080"
+
 
