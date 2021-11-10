@@ -1,0 +1,49 @@
+header {
+  background-color: var(--primary);
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    span {
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    fa-icon {
+      font-size: 1.3rem;
+      color: #fff;
+      padding-left: 1.1rem;
+
+      &.botao-sair {
+        padding-left: 0.5rem;
+      }
+    }
+
+  }
+}
+
+span {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 1rem;
+
+  &.botao-sair {
+    padding-right: 0;
+  }
+
+  &.item-menu {
+    color: var(--primary);
+    font-weight: 500;
+  }
+}
+
+
+.ativo {
+  display: none;
+}

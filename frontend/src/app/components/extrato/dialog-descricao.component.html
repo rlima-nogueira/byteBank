@@ -1,0 +1,16 @@
+<ng-container *ngIf="data.valorCampo === 'descricao' ">
+  <div style="width: 100%; ">
+    <h1 style="margin-bottom: 1rem; color: var(--primary)"> Descrição do gasto </h1>
+    <span style="word-break: break-word;"> {{ data?.descricao }}</span>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="data.valorCampo === 'excluirGasto' ">
+  <div style="width: 100%; height: 60%" >
+    <h1 style="margin-bottom: 1rem; color: var(--primary)">Deseja excluir este registro? </h1>
+    <div style="display: flex; justify-content: space-evenly; height: 100%; align-items: center;">
+      <button mat-flat-button style="background-color: var(--primary); color: #fff;" (click)="this.dialogRef.close(this.data.id)">Sim</button>
+      <button mat-flat-button color="warn" (click)="this.dialogRef.close()">Não</button>
+    </div>
+  </div>
+</ng-container>

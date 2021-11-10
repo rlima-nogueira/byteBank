@@ -1,0 +1,59 @@
+<main>
+  <div class="gastos">
+    <span>Total de gastos pagos: <b><span class="valor-pago">{{ totalGastosPago | currency}}</span></b></span>
+    <span>Total de gastos: <b><span class="valor">{{ totalGastos | currency}}</span></b></span>
+  </div>
+
+  <mat-table [dataSource]="dataSource" class="tabela">
+    <ng-container matColumnDef="data">
+      <mat-header-cell *matHeaderCellDef class="tabela__cabecalho__cadastro"> Data de cadastro </mat-header-cell>
+      <mat-cell *matCellDef="let element"  class="tabela__conteudo__cadastro"> {{element?.data | date: 'short'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dataGasto">
+      <mat-header-cell *matHeaderCellDef class="tabela__cabecalho"> Data do gasto </mat-header-cell>
+      <mat-cell *matCellDef="let element"  class="tabela__conteudo"> {{element?.dataGasto | date: 'shortDate'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="valor">
+      <mat-header-cell *matHeaderCellDef class="tabela__cabecalho"> Valor </mat-header-cell>
+      <mat-cell *matCellDef="let element"  class="tabela__conteudo"> {{element?.valor | currency}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <mat-header-cell *matHeaderCellDef class="tabela__cabecalho"> Descrição </mat-header-cell>
+      <mat-cell *matCellDef="let element"
+        [ngClass]="element.descricao.length > 26 ? tabela__conteudo__descricao : tabela__conteudo__descricao_sem_pointer"
+        [matTooltip]="habilitarTooltip(element.descricao)"
+        matTooltipClass="tooltip"
+        (click)="abrirDialogDescricao('descricao', element?.descricao)"> {{element?.descricao}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="pago">
+      <mat-header-cell *matHeaderCellDef class="tabela__cabecalho"> Pago </mat-header-cell>
+      <mat-cell *matCellDef="let element"  class="tabela__conteudo">
+        <mat-checkbox
+          [FormControlName] = "pago"
+          [checked]="element.pago"
+          (change)="$event ? pagarGasto(element, $event) : element.pago"
+          >
+        </mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <mat-header-cell *matHeaderCellDef class="tabela__cabecalho"> # </mat-header-cell>
+      <mat-cell *matCellDef="let element"  class="tabela__conteudo">
+        <fa-icon [icon]="icones.faEdit" (click)="editarGasto(element)"> </fa-icon>
+        <fa-icon [icon]="icones.faTrash" (click)="excluirGasto('excluirGasto', element.id)"> </fa-icon>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</main>
+
+
+

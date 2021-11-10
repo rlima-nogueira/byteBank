@@ -1,0 +1,24 @@
+<header *ngIf="!this.location.isCurrentPathEqualTo('/login')">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <fa-icon [icon]="icones.faBars"> </fa-icon>
+  </button>
+  <mat-menu #menu="matMenu" >
+    <button mat-menu-item routerLink="extrato">
+      <span class="item-menu">Ínicio</span>
+    </button>
+    <button mat-menu-item routerLink="novo-cartao">
+      <span  class="item-menu">Novo cartão</span>
+    </button>
+    <button mat-menu-item routerLink="novo-gasto">
+      <span  class="item-menu">Novo gasto</span>
+    </button>
+  </mat-menu>
+  <button (click)="sairSistema()" routerLink="login" routerLinkActive="ativo">
+    <span class="botao-sair">Sair</span>
+    <fa-icon class="botao-sair" [icon]="icones.faSignOutAlt"> </fa-icon>
+  </button>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

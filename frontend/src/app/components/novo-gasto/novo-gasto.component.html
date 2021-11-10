@@ -1,0 +1,124 @@
+<ng-template #cadastrarNovoGasto>
+  <section class="container">
+    <form
+      class="formulario"
+      [formGroup]="form"
+      (ngSubmit)="cadastrar()">
+
+      <h2 class="formulario__titulo">Cadastrar novo gasto</h2>
+
+      <div class="form-field">
+        <label class="form-field__label" for="valor">Data do gasto</label>
+        <div class="input-calendario">
+          <input [matDatepicker]="picker" class="form-field__input" formControlName="dataGasto">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="valor">Valor*</label>
+        <input class="form-field__input" id="valor" type="number" formControlName="valor">
+        <app-alertas
+          *ngIf="form.get('valor').invalid && this.form.get('valor').touched"
+          mensagem="Campo valor é obrigatório"
+          ></app-alertas>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label"  for="destino">Descrição*</label>
+        <input class="form-field__input" id="valor" type="text" formControlName="descricao">
+        <app-alertas
+          *ngIf="form.get('descricao').invalid && this.form.get('descricao').touched"
+          mensagem="Campo descrição é obrigatório"></app-alertas>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label"  for="destino">Cartão</label>
+          <mat-select class="form-field__input" formControlName="cartao" name="cartao">
+            <mat-option class="form-field__input__select" *ngFor="let opcao of cartoes$ | async as cartoes$" [value]="opcao.id">
+              {{ opcao.nomeCartao }}
+            </mat-option>
+          </mat-select>
+      </div>
+
+      <div class="botao-wrapper">
+        <button
+          [ngClass]="form.invalid ? 'botao botao-desabilitado' : 'botao'"
+          type="submit">
+          Cadastrar
+        </button>
+      </div>
+
+    </form>
+  </section>
+</ng-template>
+
+
+<ng-template #editarGasto>
+  <section class="container">
+    <form
+      class="formulario"
+      [formGroup]="form"
+      (ngSubmit)="editar()">
+
+      <h2 class="formulario__titulo">Editar gasto</h2>
+
+      <div class="form-field">
+        <label class="form-field__label" for="valor">Data do gasto</label>
+        <div class="input-calendario">
+          <input [matDatepicker]="picker" class="form-field__input" formControlName="dataGasto">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="valor">Valor*</label>
+        <input class="form-field__input" id="valor" type="number" formControlName="valor">
+        <app-alertas
+          *ngIf="form.get('valor').invalid && this.form.get('valor').touched"
+          mensagem="Campo valor é obrigatório"
+          ></app-alertas>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label"  for="destino">Descrição*</label>
+        <input class="form-field__input" id="valor" type="text" formControlName="descricao">
+        <app-alertas
+          *ngIf="form.get('descricao').invalid && this.form.get('descricao').touched"
+          mensagem="Campo descrição é obrigatório"></app-alertas>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label"  for="destino">Cartão</label>
+          <mat-select class="form-field__input" formControlName="cartao" name="cartao">
+            <mat-option class="form-field__input__select" *ngFor="let opcao of cartoes$ | async as cartoes$" [value]="opcao.id">
+              {{ opcao.nomeCartao }}
+            </mat-option>
+          </mat-select>
+      </div>
+
+      <div class="form-field__checkbox">
+        <label class="form-field__label__checkbox"  for="destino">Pago</label>
+          <mat-checkbox
+            [FormControlName] = "pago"
+            [checked]="dadosGasto.pago"
+            (change)="$event ? verificarCheckbox($event) : dadosGasto.pago"
+            >
+          </mat-checkbox>
+      </div>
+
+      <div class="botao-wrapper">
+        <button
+          [ngClass]="form.invalid ? 'botao botao-desabilitado' : 'botao'"
+          type="submit">
+          Editar
+        </button>
+      </div>
+
+    </form>
+  </section>
+</ng-template>
+
+<ng-content *ngTemplateOutlet="selecionarTemplate"></ng-content>

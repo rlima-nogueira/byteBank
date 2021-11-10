@@ -1,0 +1,150 @@
+.container {
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  max-width: 60vw;
+  margin: 0 auto;
+
+  .formulario {
+    border: 1px solid var(--verde-botao);
+    background-color: white;
+    padding: 16px;
+    width: 50vw;
+    display: flex;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+    flex-direction: column;
+    align-items: center;
+
+    &__titulo {
+        text-transform: capitalize;
+        color: var(--primary);
+      }
+  }
+}
+
+
+
+.form-field {
+  width: 100%;
+  font:  0.75rem 'Noto Sans JP', sans-serif;
+  margin: 15px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--primary);
+
+  &__label {
+    color: inherit;
+    margin-bottom: 4px;
+    font:  0.75rem 'Noto Sans JP', sans-serif;
+
+    &__checkbox {
+      margin: 4px;
+      font:  0.75rem 'Noto Sans JP', sans-serif;
+    }
+  }
+
+  &__input {
+    padding: 8px;
+    border-radius: 4px;
+    color: inherit;
+    border: 2px solid;
+    outline: none;
+
+    &__select {
+      font:  0.75rem 'Noto Sans JP', sans-serif;
+      color: var(--primary);
+    }
+  }
+
+  &__checkbox {
+    flex-direction: row;
+    color: var(--primary);
+    width: 100%;
+    margin: 0.9rem 0 0.9rem 0;
+  }
+}
+
+.botao-wrapper {
+  display: flex;
+}
+
+.botao {
+  background-color: var(--primary);
+  color: white;
+  display: block;
+  flex: 1;
+  border: none;
+  border-radius: 4px;
+  font:  1rem 'Noto Sans JP', sans-serif;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.botao-desabilitado {
+    opacity: 0.5;
+    cursor: none;
+    pointer-events: none;
+  }
+}
+
+
+@media only screen and (max-width: 521px) {
+  .container {
+    padding: var(--padding);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+
+    .formulario {
+      width: 100%;
+    }
+  }
+
+
+  .form-field {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    color: var(--primary);
+
+    &__label {
+      color: inherit;
+      margin-bottom: 4px;
+      font:  0.75rem 'Noto Sans JP', sans-serif;
+    }
+
+    .input-calendario {
+      display: flex;
+      width: 100%;
+    }
+
+    &__input {
+      width: 100%;
+
+      &__select {
+        font:  0.75rem 'Noto Sans JP', sans-serif;
+        color: var(--primary);
+      }
+    }
+
+    &__checkbox {
+      flex-direction: row;
+      color: var(--primary);
+      width: 100%;
+      margin: 0.9rem 0 0.9rem 0;
+    }
+  }
+}
+
+::ng-deep .mat-select-value-text {
+  color: var(--primary);
+  font:  0.75rem 'Noto Sans JP', sans-serif;
+}
