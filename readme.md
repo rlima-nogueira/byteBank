@@ -17,6 +17,8 @@ Esse projeto conta com Dockerfile tanto no frontend quanto no backend, para util
 
 Startar a aplicação pelo Docker: 
 
+```mvn clean package``` </br>
+
 ```docker-compose build ``` </br>
 ```docker-compose up ```
 
