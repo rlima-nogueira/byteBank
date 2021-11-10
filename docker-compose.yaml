@@ -1,0 +1,29 @@
+version: '3'
+
+services: 
+  frontend-app:
+    build: 
+      dockerfile: ./frontend/Dockerfile
+      context: .
+    image: rlimanogueira/front-bytebank
+    container_name: angular_app
+    ports: 
+      - "4200:80"
+    networks:
+      - production-network
+
+  backend-app:
+    build:
+      dockerfile: ./backend/Dockerfile
+      context: .
+    image: rlimanogueira/back-bytebank
+    container_name: spring_app
+    ports: 
+      - "8080:80"
+    networks:
+      - production-network
+
+
+networks:
+  production-network:
+    driver: bridge
