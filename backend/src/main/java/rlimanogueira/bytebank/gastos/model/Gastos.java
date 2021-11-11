@@ -16,7 +16,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import rlimanogueira.bytebank.cartao.model.Cartao;
 
 @Entity
 @Getter
@@ -39,8 +38,5 @@ public class Gastos {
 
     private boolean pago;
     private String email;
-
-    @ManyToOne
-    private Cartao cartao; 
 
 }

@@ -28,6 +28,8 @@ export class ExtratoComponent implements OnInit{
     pago: new FormArray([]),
   });
 
+  public currentDate = new Date();
+
   constructor(
     private formBuilder: FormBuilder,
     private novoGastoService: NovoGastoService,

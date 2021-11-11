@@ -5,12 +5,17 @@ spring:
             path: /h2-console
 
     datasource:
-        url: jdbc:h2:mem:bytebank;DB_CLOSE_DELAY=-1
-        username: sa
-        password:
-        driverClassName: org.h2.Driver
+        url: jdbc:postgresql://localhost:5432/bytebank
+        username: postgres
+        password: 65230436
+        driver-class-name: org.postgresql.Driver
+        # url: jdbc:h2:mem:bytebank;DB_CLOSE_DELAY=-1
+        # username: sa
+        # password:
+        # driverClassName: org.h2.Driver
     jpa:
-        database-plataform: org.hibernate.dialect.H2Dialect
+        database-plataform: org.hibernate.dialect.PostgreSQLDialect
+        # database-plataform: org.hibernate.dialect.H2Dialect
         hibernate.ddl-auto: update
         defer-datasource-initialization: true
         properties.hibernate.show_sql: false

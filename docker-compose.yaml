@@ -7,6 +7,8 @@ services:
       context: .
     image: rlimanogueira/front-bytebank
     container_name: angular_app
+    depends_on: 
+      - database
     ports: 
       - "4200:80"
     networks:
@@ -18,10 +20,27 @@ services:
       context: .
     image: rlimanogueira/back-bytebank
     container_name: spring_app
+    depends_on: 
+      - database
     ports: 
       - "8080:8080"
     networks:
       - production-network
+  
+  database:
+    container_name: postgresql_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 65230436
+      POSTGRES_DB: bytebank
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+volumes:
+  pg_data:
 
 
 networks:

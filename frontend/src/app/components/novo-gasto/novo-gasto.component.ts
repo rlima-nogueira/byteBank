@@ -6,8 +6,7 @@ import { IGastos } from 'src/app/shared/interfaces/gastos';
 import { NovoGastoService } from './services/novo-gasto.service';
 
 import firebase from 'firebase/app';
-import { NovoCartaoService } from '../novo-cartao/services/novo-cartao.service';
-import { ICartao } from 'src/app/shared/interfaces/cartao';
+
 import { Observable } from 'rxjs';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
@@ -20,7 +19,7 @@ export class NovoGastoComponent implements OnInit, AfterViewInit {
   @Output() public aoCadastrar = new EventEmitter<IGastos>();
   public form: FormGroup;
   public mensagemAlerta: string;
-  public cartoes$: Observable<ICartao> = this.novoCartaoService.buscarTodosCartoes();
+
   public dadosGasto;
 
   @ViewChild('cadastrarNovoGasto', {static: false}) public cadastrarNovoGasto: TemplateRef<any>;
@@ -34,7 +33,6 @@ export class NovoGastoComponent implements OnInit, AfterViewInit {
     private novoGastoService: NovoGastoService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private novoCartaoService: NovoCartaoService,
     private cd: ChangeDetectorRef,
   ) { }
 
@@ -66,7 +64,6 @@ export class NovoGastoComponent implements OnInit, AfterViewInit {
       valor: ['', Validators.required],
       descricao: ['', Validators.required],
       dataGasto: [''],
-      cartao: ['']
     });
   }
 

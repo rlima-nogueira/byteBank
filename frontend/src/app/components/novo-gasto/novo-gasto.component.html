@@ -33,15 +33,6 @@
           mensagem="Campo descrição é obrigatório"></app-alertas>
       </div>
 
-      <div class="form-field">
-        <label class="form-field__label"  for="destino">Cartão</label>
-          <mat-select class="form-field__input" formControlName="cartao" name="cartao">
-            <mat-option class="form-field__input__select" *ngFor="let opcao of cartoes$ | async as cartoes$" [value]="opcao.id">
-              {{ opcao.nomeCartao }}
-            </mat-option>
-          </mat-select>
-      </div>
-
       <div class="botao-wrapper">
         <button
           [ngClass]="form.invalid ? 'botao botao-desabilitado' : 'botao'"
@@ -88,15 +79,6 @@
         <app-alertas
           *ngIf="form.get('descricao').invalid && this.form.get('descricao').touched"
           mensagem="Campo descrição é obrigatório"></app-alertas>
-      </div>
-
-      <div class="form-field">
-        <label class="form-field__label"  for="destino">Cartão</label>
-          <mat-select class="form-field__input" formControlName="cartao" name="cartao">
-            <mat-option class="form-field__input__select" *ngFor="let opcao of cartoes$ | async as cartoes$" [value]="opcao.id">
-              {{ opcao.nomeCartao }}
-            </mat-option>
-          </mat-select>
       </div>
 
       <div class="form-field__checkbox">

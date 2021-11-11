@@ -30,12 +30,7 @@ export const routes: Routes = [
     path: 'login',
     canLoad: [LoginGuard],
     loadChildren: () => import('./components/login/modules/login.module').then((m) =>  m.LoginModule),
-  },
-  {
-    path: 'novo-cartao',
-    canLoad: [AuthGuard],
-    loadChildren: () => import('./components/novo-cartao/modules/novo-cartao.module').then((m) =>  m.NovoCartaoModule),
-  },
+  }
 ];
 
 
