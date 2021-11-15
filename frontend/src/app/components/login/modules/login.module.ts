@@ -5,6 +5,9 @@ import { LoginRoutingModule } from '../routes/login-routing.module';
 import { LoginComponent } from '../login.component';
 import { AutenticacaoService } from '../services/autenticacao.service';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -12,7 +15,9 @@ import { AutenticacaoService } from '../services/autenticacao.service';
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   exports: [LoginComponent],
   providers: [

@@ -1,10 +1,32 @@
 <section class="container">
-  <div class="login">
+  <div class="title">
     <h1>ByteBank</h1>
-    <button class = "login-button" (click)="fazerLogin()">
-      <img src='../../../assets/img/google.png' class = "login-img">
-    </button>
-    <span>Login with google</span>
+  </div>
+
+  <div class="login">
+
+    <div class="form-google">
+      <button class = "login-button" (click)="fazerLogin()">
+        <img src='../../../assets/img/google.png' class = "login-img">
+      </button>
+      <span>Login with google</span>
+    </div>
+
+    <form [formGroup]="login" class="forms">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <mat-error *ngIf="login.value['email'].invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-error *ngIf="login.value['password'].invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <button> Login</button>
+    </form>
   </div>
 </section>
 
