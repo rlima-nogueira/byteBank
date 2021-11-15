@@ -3,7 +3,6 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   height: 100vh;
   width: 100%;
@@ -12,8 +11,7 @@
 
   .title {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 10em;
 
     h1 {
       font: 700 4rem 'Noto Sans JP', sans-serif;
