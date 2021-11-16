@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: var(--primary);
 
 
@@ -31,7 +31,7 @@
       flex-direction: column;
       padding-right: 5rem;
 
-        .login-button {
+        .login-google {
           margin: 1rem;
           border: 4px solid transparent;
           cursor: pointer;
@@ -39,7 +39,7 @@
           width: 5.5em;
           border-radius: 50%;
           background-color: #fff;
-          transition: filter 1s;
+          transition: filter 2s;
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
           img {
@@ -47,7 +47,7 @@
           }
         }
 
-        .login-button:hover {
+        .login-google:hover {
           background-color: #689DF7;
         }
 
@@ -60,7 +60,21 @@
     .forms {
       display: flex;
       flex-direction: column;
+      align-items: center;
 
+      .login {
+        border-radius: 1rem;
+        width: 5rem;
+        height: 1.8rem;
+        border: none;
+        cursor: pointer;
+        transition: filter 2s;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .login:hover {
+        background-color: #689DF7;
+      }
 
     }
   }

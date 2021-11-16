@@ -30,18 +30,18 @@ export class LoginComponent implements OnInit {
   }
 
   public getErrorMessageEmail(): string {
-    if (this.login.value.email.hasError('required')) {
+    if (this.login.get('email').hasError('required')) {
       return 'You must enter a value';
     }
 
-    return this.login.value.email.hasError('email') ? 'Not a valid email' : '';
+    return this.login.get('email').hasError('email') ? 'Not a valid email' : '';
   }
 
   public getErrorMessagePassword(): string {
-    if (this.login.value.password.hasError('required')) {
+    if (this.login.get('password').hasError('required')) {
       return 'You must enter a value';
     }
 
-    return this.login.value.email.hasError('password') ? 'Password is incorrect, pleate try again' : '';
+    return this.login.get('password').hasError('password') ? 'Password is incorrect, pleate try again' : '';
   }
 }

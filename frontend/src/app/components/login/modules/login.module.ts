@@ -7,7 +7,7 @@ import { AutenticacaoService } from '../services/autenticacao.service';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatInputModule
   ],
   exports: [LoginComponent],
   providers: [

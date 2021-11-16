@@ -6,26 +6,31 @@
   <div class="login">
 
     <div class="form-google">
-      <button class = "login-button" (click)="fazerLogin()">
+      <button class="login-google" (click)="fazerLogin()">
         <img src='../../../assets/img/google.png' class = "login-img">
       </button>
       <span>Login with google</span>
     </div>
 
     <form [formGroup]="login" class="forms">
-      <mat-form-field appearance="fill">
+      <mat-form-field >
         <mat-label>Enter your email</mat-label>
         <input matInput placeholder="pat@example.com" formControlName="email" required>
-        <mat-error *ngIf="login.value['email'].invalid">{{getErrorMessage()}}</mat-error>
+        <mat-error *ngIf="login.get('email')?.errors?.email && login.get('email')?.touched">
+          {{getErrorMessageEmail()}}
+        </mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field >
         <mat-label>Enter your password</mat-label>
         <input matInput type="password" formControlName="password" required>
-        <mat-error *ngIf="login.value['password'].invalid">{{getErrorMessage()}}</mat-error>
+        <mat-error
+          *ngIf="login.get('password')?.errors?.password && login.get('password')?.touched">
+            {{getErrorMessagePassword()}}
+        </mat-error>
       </mat-form-field>
 
-      <button> Login</button>
+      <button class="login"> Login</button>
     </form>
   </div>
 </section>
