@@ -12,6 +12,7 @@ A ideia deste projeto surgiu a partir de aulas assistidas na plataforma [Alura](
 * Java (11) Spring Boot 
 * Lombok
 * Swagger
+* H2-Console/Postgres
 
 Esse projeto conta com Dockerfile tanto no frontend quanto no backend, para utilizar você precisar ter o [Docker](https://www.docker.com/get-started) instalado em sua máquina. 
 
