@@ -16,3 +16,4 @@ TO-DO
     [ ] Tabela de extrato
 [ ] Testes 
 [ ] Filtros de busca
+[ ] Login com autenticação jwt
