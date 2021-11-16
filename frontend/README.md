@@ -10,10 +10,10 @@ Nele esta sendo implementado:
 - Matchbox para atualização de pagamento 
 
 
-TO-DO
-[ ] Responsividade 
-    [ ] Tela de login
-    [ ] Tabela de extrato
-[ ] Testes 
-[ ] Filtros de busca
-[ ] Login com autenticação jwt
+### TO-DO ###
+- [ ] Responsividade </br>
+  - [ ] Tela de login  </br>
+  -   [ ] Tabela de extrato  </br>
+- [ ] Testes  </br>
+- [ ] Filtros de busca  </br>
+- [ ] Login com autenticação jwt  </br>
