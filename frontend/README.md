@@ -8,3 +8,11 @@ Nele esta sendo implementado:
 - Lazy loading
 - TemplateRef utilizando ngTemplateOutlet
 - Matchbox para atualização de pagamento 
+
+
+TO-DO
+[ ] Responsividade 
+    [ ] Tela de login
+    [ ] Tabela de extrato
+[ ] Testes 
+[ ] Filtros de busca
