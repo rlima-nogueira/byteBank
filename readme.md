@@ -21,7 +21,7 @@ Startar a aplicação pelo Docker:
 ```docker-compose up ```
 
 ### BUGFIX ###
-[X] Ajustar a imagem do dockerfile no backend para conseguir consumir a aplicação de forma correta
+- [X] Ajustar a imagem do dockerfile no backend para conseguir consumir a aplicação de forma correta
 - Solução: Estava mapeando a porta errada. 
 
 > A sintaxe pra fazer o bind de porta entre container e host é "porta-no-host:porta-no-container" então se você trocar "8080:80" para "8080:8080" a aplicação deve tá disponível em localhost:8080"
